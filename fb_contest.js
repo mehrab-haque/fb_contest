@@ -13,7 +13,7 @@ bot.on('message', (payload, chat) => {
       title: "Hi",
       subtitle: "Question?",
       image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Boeing_737-8HJ%2C_Air_India_Express_AN1157698.jpg/100px-Boeing_737-8HJ%2C_Air_India_Express_AN1157698.jpg'
-    }]).then(res=>{
+    }], { typing: true }).then(res=>{
       console.log(res)
     })
   console.log(payload)
