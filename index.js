@@ -1,11 +1,14 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const BootBot = require('bootbot');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const bot = new BootBot({
+  accessToken: 'EAAIaRSFfbE0BAGXyOU54f5p0dOUwbFyHIswGyLHZCDXeEgOfJ6WFpD624qAORYpnDBhlmTCgvKBeKMEnjTxTCgy611GRE6rqMeq5oSRO2tJ6hIjLM3oBur5t4TZCnfhW9HyruYehUj8dAAhfy46GivVvMExdgftVlcVR6JcrZBCBNXX76rTZCwD2KW6hyPIZD',
+  verifyToken: 'buet',
+  appSecret: '04843bc7ecb1e6ace3d751297a687d0c'
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+bot.on('message', (payload, chat) => {
+  const text = payload.message.text;
+  chat.say(`Echo: ${text}`);
+});
+
+bot.start(3000);
