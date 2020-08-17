@@ -8,6 +8,7 @@ const bot = new BootBot({
 
 bot.on('message', (payload, chat) => {
   const text = payload.message.text;
+
   chat.sendGenericTemplate([{
       title: "Hi",
       subtitle: "Question?",
@@ -15,7 +16,7 @@ bot.on('message', (payload, chat) => {
     }]).then(res=>{
       console.log(res)
     })
-  console.log(text)
+  console.log(payload)
 });
 
 bot.start(3000);
